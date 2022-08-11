@@ -11,19 +11,15 @@ channel = main["channel_id"]
 guild_id = main["guild_id"]
 
 a = []
-def auto_farm(message,channel_id,auth_token,guild_id):
+def auto_farm(channel_id,auth_token,guild_id):
+    header = {"authorization": auth_token}
+    message = requests.get(f"https://discord.com/api/v9/channels/{channel_id}/messages", headers=header)
     with open(__file__.replace("main.py", "")+"json_files/data.json","r") as js:
         timing = json.loads(js.read())
     jso = json.loads(message.text)
     js1 = jso[0]["content"]
-    if js1 in timing["invade"].keys():
-        print("\33[93mgot something")
-        move = timing["invade"][js1]
-        confirmation(channel_id, jso, move,auth_token,guild_id)
-    elif js1 in timing["catch"].keys():
-        print("\33[93mgot something")
-        move = timing["catch"][js1]
-        confirmation(channel_id , jso , move,auth_token,guild_id)
+    move = timing[js1]
+    confirmation(channel_id , jso , move,auth_token,guild_id)
             
 def confirmation(channel_id,message,move,auth,guild_id):
     payload = {
@@ -58,8 +54,7 @@ def message_sent(authorization,channelid,main,guild_id):
             r = requests.post(f"https://discord.com/api/v9/channels/{channel_id}/messages", data=payload, headers=header)
             if r.status_code == 200:
                 print("\33[92m"+pls_cmd[pay])
-                r = requests.get(f"https://discord.com/api/v9/channels/{channel_id}/messages", headers=header)
-                auto_farm(r, channelid, authorization,guild_id)
+                auto_farm(channelid, authorization,guild_id)
             else:
                 print("\33[91mError"+pls_cmd[pay])
         time.sleep(random.randint(35, 50))

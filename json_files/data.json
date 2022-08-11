@@ -1,18 +1,15 @@
 {
-  "catch": {
     "Catch the fish!\n<:Kraken:860228238956429313>\n:bucket::bucket::bucket:":0,
     "Catch the fish!\n       <:Kraken:860228238956429313>\n:bucket::bucket::bucket:":1,
     "Catch the fish!\n              <:Kraken:860228238956429313>\n:bucket::bucket::bucket:":2,
     "Dunk the ball!\n:wastebasket::wastebasket::wastebasket:\n:basketball:\n\n       :levitate:":0,
     "Dunk the ball!\n:wastebasket::wastebasket::wastebasket:\n       :basketball:\n\n       :levitate:":1,
-    "Dunk the ball!\n:wastebasket::wastebasket::wastebasket:\n              :basketball:\n\n       :levitate:":2
-  },
-  "invade":{
+    "Dunk the ball!\n:wastebasket::wastebasket::wastebasket:\n              :basketball:\n\n       :levitate:":2,
     "Dodge the Fireball\n       <:Dragon:861390869696741396>\n<:FireBall:883714770748964864>\n       :levitate:": 2,
     "Dodge the Fireball\n       <:Dragon:861390869696741396>\n       <:FireBall:883714770748964864>\n       :levitate:":2,
     "Dodge the Fireball\n       <:Dragon:861390869696741396>\n              <:FireBall:883714770748964864>\n       :levitate:":1,
     "Hit the ball!\n:goal::goal::goal:\n:levitate:\n\n       \u26bd":2,
     "Hit the ball!\n:goal::goal::goal:\n       :levitate:\n\n       \u26bd":2,
     "Hit the ball!\n:goal::goal::goal:\n              :levitate:\n\n       \u26bd":0
-  }
 }
+

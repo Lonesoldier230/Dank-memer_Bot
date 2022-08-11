@@ -20,7 +20,7 @@ def auto_farm(channel_id,auth_token,guild_id):
     js1 = jso[0]["content"]
     if js1 in timing:
         move = timing[js1]
-    confirmation(channel_id , jso , move,auth_token,guild_id)
+        confirmation(channel_id , jso , move,auth_token,guild_id)
 
 def confirmation(channel_id,message,move,auth,guild_id):
     payload = {

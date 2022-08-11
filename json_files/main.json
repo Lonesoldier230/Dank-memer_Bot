@@ -1,0 +1,20 @@
+{
+    "commands": {
+        "pls hunt": "Hunted",
+        "pls dig": "Dug",
+        "pls fish": "Fished"
+    },
+    "channel_id": [
+
+    ],
+    "authorization": [
+
+    ],
+    "guild_id": [
+
+    ],
+    "Horseshoe_activation": true,
+    "distraction": [
+        "pls bal"
+    ]
+}

@@ -18,9 +18,10 @@ def auto_farm(channel_id,auth_token,guild_id):
         timing = json.loads(js.read())
     jso = json.loads(message.text)
     js1 = jso[0]["content"]
-    move = timing[js1]
+    if js1 in timing:
+        move = timing[js1]
     confirmation(channel_id , jso , move,auth_token,guild_id)
-            
+
 def confirmation(channel_id,message,move,auth,guild_id):
     payload = {
             "application_id": 270904126974590976,
@@ -34,7 +35,7 @@ def confirmation(channel_id,message,move,auth,guild_id):
     headers = {"authorization":auth}
     r = requests.post("https://discord.com/api/v9/interactions",json = payload,headers=headers)
     print(r.status_code)
-    
+
 
 def message_sent(authorization,channelid,main,guild_id):
     pls_ran = (False, False, False, False, False, False, True)
@@ -58,7 +59,7 @@ def message_sent(authorization,channelid,main,guild_id):
             else:
                 print("\33[91mError"+pls_cmd[pay])
         time.sleep(random.randint(35, 50))
-        
+
 def horseshoe(author_id,channel_id):
     time.sleep(5)
     while True:

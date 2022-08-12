@@ -34,7 +34,9 @@ def confirmation(channel_id,message,move,auth,guild_id):
     }
     headers = {"authorization":auth}
     r = requests.post("https://discord.com/api/v9/interactions",json = payload,headers=headers)
-    print(r.status_code)
+    now = time.localtime(time.time())
+    timen = (time.strftime("%y/%m/%d %H:%M:", now))
+    print(f"\33[93m{timen}Caught something")
 
 
 def message_sent(authorization,channelid,main,guild_id):
@@ -49,24 +51,28 @@ def message_sent(authorization,channelid,main,guild_id):
             r = requests.post(f"https://discord.com/api/v9/channels/{channel_id}/messages", data=payload, headers=header)
             time.sleep(5)
         for pay in pls_cmd:
+            now = time.localtime(time.time())
+            timen = (time.strftime("%y/%m/%d %H:%M:", now))
             payload = {"content": pay}
             channel_id = channelid
             header = {"authorization": authorization}
             r = requests.post(f"https://discord.com/api/v9/channels/{channel_id}/messages", data=payload, headers=header)
             if r.status_code == 200:
-                print("\33[92m"+pls_cmd[pay])
+                print("\33[92m"+timen+pls_cmd[pay])
                 auto_farm(channelid, authorization,guild_id)
             else:
-                print("\33[91mError"+pls_cmd[pay])
+                print("\33[91mError"+timen+pls_cmd[pay])
         time.sleep(random.randint(35, 50))
 
 def horseshoe(author_id,channel_id):
     time.sleep(5)
     while True:
+        now = time.localtime(time.time())
+        timen = (time.strftime("%y/%m/%d %H:%M:", now))
         payload = {"content":"pls use horseshoe"}
         header = {"authorization":author_id}
         r = requests.post(f"https://discord.com/api/v9/channels/{channel_id}/messages", data=payload, headers=header)
-        print("\33[34mHorseshoe Activated")
+        print(f"\33[34m{timen}Horseshoe Activated")
         time.sleep(60*30)
 
 for i in range(len(auth)):
